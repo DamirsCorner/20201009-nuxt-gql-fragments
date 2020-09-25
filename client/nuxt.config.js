@@ -32,9 +32,7 @@ export default {
   build: {},
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: 'http://localhost:3000/graphql',
-      },
+      default: '~/plugins/apollo-client-config.js',
     },
   },
   server: {

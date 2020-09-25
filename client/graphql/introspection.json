@@ -1,0 +1,18 @@
+{
+  "__schema": {
+    "types": [
+      {
+        "kind": "UNION",
+        "name": "Book",
+        "possibleTypes": [
+          {
+            "name": "Ebook"
+          },
+          {
+            "name": "Audiobook"
+          }
+        ]
+      }
+    ]
+  }
+}
