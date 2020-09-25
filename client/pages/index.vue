@@ -27,8 +27,21 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { Context } from '@nuxt/types'
+import VueApollo from 'vue-apollo'
+import Component from 'vue-class-component'
+import { Books_books, Books } from '../graphql/types/Books'
+import { BOOKS_QUERY } from '../graphql/queries/books'
 
-export default Vue.extend({})
+@Component({
+  async fetch(this: IndexPage) {
+    const result = await this.$apollo.query<Books>({ query: BOOKS_QUERY })
+    this.books = result.data.books
+  },
+})
+export default class IndexPage extends Vue {
+  books: Books_books[] = []
+}
 </script>
 
 <style>
