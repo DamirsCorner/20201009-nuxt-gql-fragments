@@ -1,0 +1,19 @@
+type Ebook {
+  id: String!
+  author: String!
+  title: String!
+  pages: Int!
+}
+
+type Audiobook {
+  id: String!
+  author: String!
+  title: String!
+  minutes: Int!
+}
+
+union Book = Ebook | Audiobook
+
+type Query {
+  books: [Book!]!
+}
